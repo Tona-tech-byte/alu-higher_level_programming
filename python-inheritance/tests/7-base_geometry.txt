@@ -24,3 +24,44 @@ ValueError: distance must be greater than 0
 >>> bg.integer_validator("active", True)
 Traceback (most recent call last):
 TypeError: active must be an integer
+>>> try:
+...     bg.area()
+... except Exception as e:
+...     print("[{}] {}".format(type(e).__name__, e))
+[Exception] area() is not implemented
+
+>>> try:
+...     bg.integer_validator()
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     bg.integer_validator("age")
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     bg.integer_validator("age", (4,))
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     bg.integer_validator("age", [3])
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     bg.integer_validator("age", {3, 4})
+... except TypeError:
+...     print("TypeError")
+TypeError
+
+>>> try:
+...     bg.integer_validator("age", None)
+... except TypeError:
+...     print("TypeError")
+TypeError
