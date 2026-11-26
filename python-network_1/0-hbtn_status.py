@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-# Fetch and display the response from the ALU intranet status page
+"""Fetch and display the status from the intranet."""
 import urllib.request
 
-with urllib.request.urlopen("https://alu-intranet.hbtn.io/status") as response:
+with urllib.request.urlopen("https://intranet.hbtn.io/status") as response:
     body = response.read()
     print("Body response:")
     print("\t- type: {}".format(type(body)))
