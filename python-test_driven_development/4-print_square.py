@@ -2,7 +2,7 @@
 """Module for printing a square."""
 
 
-def print_square(size):
+def print_square(size=10):
     """Print a square using the # character."""
     if type(size) is not int:
         raise TypeError("size must be an integer")
