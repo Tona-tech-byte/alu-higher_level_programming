@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""Fetch the status of a URL using requests."""
+"""Fetches the status of a URL."""
 import requests
 
 
 if __name__ == "__main__":
-    response = requests.get('https://alu-intranet.hbtn.io/status')
-    body = response.text
+    r = requests.get('https://intranet.hbtn.io/status')
     print("Body response:")
-    print("\t- type: {}".format(type(body)))
-    print("\t- content: {}".format(body))
+    print("\t- type: {}".format(type(r.text)))
+    print("\t- content: {}".format(r.text))
