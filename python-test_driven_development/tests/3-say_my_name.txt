@@ -41,3 +41,8 @@ Check empty last name:
 
 >>> say_my_name("John", "")
 My name is John 
+
+Call without any arguments:
+
+>>> say_my_name()
+My name is  

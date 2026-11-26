@@ -2,7 +2,7 @@
 """Module for printing a person's name."""
 
 
-def say_my_name(first_name, last_name=""):
+def say_my_name(first_name="", last_name=""):
     """Print a person's first and last name."""
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
