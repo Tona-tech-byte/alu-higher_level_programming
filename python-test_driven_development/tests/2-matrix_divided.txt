@@ -62,3 +62,41 @@ Reject division by zero:
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+Divide by positive infinity:
+
+    >>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+    [[0.0, 0.0], [0.0, 0.0]]
+
+Divide by negative infinity:
+
+    >>> matrix_divided([[1, 2]], float('-inf'))
+    [[-0.0, -0.0]]
+
+Reject an empty matrix:
+
+    >>> matrix_divided([], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Reject an empty row:
+
+    >>> matrix_divided([[]], 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+Reject a missing divisor:
+
+    >>> matrix_divided([[1, 2]])
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+Reject both missing arguments:
+
+    >>> matrix_divided()
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
