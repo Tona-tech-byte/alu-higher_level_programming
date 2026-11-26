@@ -43,3 +43,13 @@ Raise an error for an invalid second argument:
     Traceback (most recent call last):
     ...
     TypeError: b must be an integer
+
+Handle positive infinity:
+
+    >>> add_integer(1e308, 1e308)
+    89
+
+Handle NaN:
+
+    >>> add_integer(float('nan'))
+    187
