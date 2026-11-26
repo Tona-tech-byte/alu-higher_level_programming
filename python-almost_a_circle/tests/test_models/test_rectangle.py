@@ -84,11 +84,18 @@ class TestRectangle(unittest.TestCase):
     def test_display(self):
         from io import StringIO
         from contextlib import redirect_stdout
+
         rect = Rectangle(2, 2)
         output = StringIO()
         with redirect_stdout(output):
             rect.display()
         self.assertEqual(output.getvalue(), "##\n##\n")
+
+        rect = Rectangle(2, 2, 1, 1)
+        output = StringIO()
+        with redirect_stdout(output):
+            rect.display()
+        self.assertEqual(output.getvalue(), "\n ##\n ##\n")
 
     def test_update_positional(self):
         rect = Rectangle(1, 1)
@@ -131,10 +138,20 @@ class TestRectangle(unittest.TestCase):
         )
 
     def test_save_to_file_none(self):
+        import os
         Rectangle.save_to_file(None)
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Rectangle.json")
 
     def test_save_to_file_empty(self):
+        import os
         Rectangle.save_to_file([])
+        self.assertTrue(os.path.exists("Rectangle.json"))
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Rectangle.json")
 
     def test_save_to_file_rectangle(self):
         import os

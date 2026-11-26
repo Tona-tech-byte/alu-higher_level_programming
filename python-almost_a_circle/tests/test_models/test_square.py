@@ -95,10 +95,20 @@ class TestSquare(unittest.TestCase):
         )
 
     def test_save_to_file_none(self):
+        import os
         Square.save_to_file(None)
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Square.json")
 
     def test_save_to_file_empty(self):
+        import os
         Square.save_to_file([])
+        self.assertTrue(os.path.exists("Square.json"))
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), "[]")
+        os.remove("Square.json")
 
     def test_save_to_file_square(self):
         import os
