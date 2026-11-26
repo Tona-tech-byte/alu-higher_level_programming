@@ -2,5 +2,9 @@
 CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost'
 IDENTIFIED BY 'user_0d_1_pwd';
 
+-- Set the password for user_0d_1
+ALTER USER 'user_0d_1'@'localhost'
+IDENTIFIED BY 'user_0d_1_pwd';
+
 -- Give user_0d_1 all privileges
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
