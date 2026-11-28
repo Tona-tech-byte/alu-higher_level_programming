@@ -15,3 +15,10 @@ database using MySQLdb.
 
 A Python script that connects to a MySQL database and retrieves
 all states, sorted by their IDs in ascending order.
+
+### 1. Filter States
+
+**File:** `1-filter_states.py`
+
+A Python script that retrieves states whose names start with
+uppercase N, sorted by their IDs in ascending order.
