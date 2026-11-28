@@ -16,7 +16,7 @@ if __name__ == "__main__":
 
     cur = db.cursor()
     state_name = db.escape_string(sys.argv[4]).decode("utf-8")
-    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE BINARY name = BINARY '{}' ORDER BY id ASC"
     cur.execute(query.format(state_name))
 
     for row in cur.fetchall():
