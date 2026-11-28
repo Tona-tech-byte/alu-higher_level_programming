@@ -22,3 +22,10 @@ all states, sorted by their IDs in ascending order.
 
 A Python script that retrieves states whose names start with
 uppercase N, sorted by their IDs in ascending order.
+
+### 2. Filter States by User Input
+
+**File:** `2-my_filter_states.py`
+
+A Python script that retrieves states matching the name
+provided by the user, sorted by ID in ascending order.
